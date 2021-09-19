@@ -1,0 +1,18 @@
+--langdef=Pawn
+--langmap=Pawn:.sma
+--regex-Pawn=/^forward[ \t]+([a-zA-Z0-9_]+)[ \t]*\(/\1/f,Function/
+--regex-Pawn=/^native[ \t]+([a-zA-Z0-9_]+)[ \t]*\(/\1/f,Function/
+--regex-Pawn=/^public[ \t]+([a-zA-Z0-9_]+)[ \t]*\(/\1/f,Function/
+--regex-Pawn=/^stock[ \t]+([a-zA-Z0-9_]+)[ \t]*\(/\1/f,Function/
+--regex-Pawn=/^([a-zA-Z0-9_]+)[ \t]*\(/\1/f,Function/
+--regex-Pawn=/^new[ \t]+([a-zA-Z0-9_]+)[ \t]*.*$/\1/v,Variable/
+--regex-Pawn=/^#define[ \t]+([a-zA-Z0-9_]+)[ \t]*.*$/\1/m,Macro/
+--regex-Pawn=/^enum[ \t]+([a-zA-Z0-9_]+)[ \t]*.*$/\1/m,Macro/
+
+--langdef=mysql
+--langmap=mysql:.sql
+--regex-mysql=/^create[ \t]+(.*[ \t])*table[ \t]+(if[ \t]+not[ \t]+exists[ \t]+)*([a-zA-Z0-9_`]+)/\3/t,Table/i
+--regex-mysql=/^create[ \t]+(.+[ \t])*view[ \t]+([a-zA-Z0-9_`]+)/\2/v,View/i
+--regex-mysql=/^create[ \t]+(.+[ \t])*procedure[ \t]+([a-zA-Z0-9_`]+)/\2/p,Procedure/i
+--regex-mysql=/^create[ \t]+(.+[ \t])*function[ \t]+([a-zA-Z0-9_`]+)/\2/f,Function/i
+--regex-mysql=/^create[ \t]+(.+[ \t])*trigger[ \t]+([a-zA-Z0-9_`]+)/\2/r,Trigger/i
