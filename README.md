@@ -22,7 +22,7 @@ To use this project to your Vim configuration, follow these steps:
 1. Install Vim, ctags, and git if they're not already innstalled.
 2. Clone this project into your home directory (~/):
 
-`git clone git@github.com:tariusagi/vimrc.git ~/.vim`
+`git clone https://github.com/tariusagi/vimrc.git ~/.vim`
 
 3. Link ctags configuration file:
 
