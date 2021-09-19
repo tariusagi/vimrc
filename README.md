@@ -14,11 +14,14 @@ And there're various settings I put in the vimrc file, which I found necessary.
 This project requires:
 - A Linux/Unix based OSes.
 - Vim (https://www.vim.org).
-- ctags (http://ctags.sourceforge.net).
+- Exuberant ctags (http://ctags.sourceforge.net).
 - Git (https://git-scm.com).
 
 # Installation
+## On Unix/Linux
+
 To use this project to your Vim configuration, follow these steps:
+
 1. Install Vim, ctags, and git if they're not already innstalled.
 2. Clone this project into your home directory (~/):
 
@@ -28,7 +31,29 @@ To use this project to your Vim configuration, follow these steps:
 
 `ln -fs ~/.vim/ctags ~/.ctags`
 
-After this, just fire up Vim, and everything should be applied automatically.
+4. Run Vim and execute this command in Vim `:helptags $VIMRUNTIME/doc` to generate tags for new plugins.
+
+And done.
+
+## On Windows
+
+On Windows, follows these steps:
+
+1. Clone this project somewhere in your computer:
+
+   `git clone https://github.com/tariusagi/vimrc.git c:\vimrc`
+
+2. Create a directory named *vimfiles* in your *%USERPROFILE%* directory (just open Explorer and enter *%USERPROFILE%* in its address bar).
+
+3. Copy all files and directories in cloned *vimrc* directory, except *.git/*, to *%USERPROFILE%\vimfiles*.
+
+4. Download **Exuberant ctags for Windows** from http://ctags.sourceforge.net/ and extract *ctags.exe* to *%USERPROFILE%\vimfiles\bin*
+
+5. Move *ctags* file from *%USERPROFILE%\vimfiles* to *%USERPROFILE%* and rename it to *ctags.cnf*.
+
+6. Run GVim and execute this command in GVim `:helptags $VIMRUNTIME/doc` to generate tags for new plugins.
+
+And done.
 
 # Usage
 *To be updated*.

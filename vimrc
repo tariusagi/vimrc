@@ -93,6 +93,9 @@ set guioptions=erL
 " =====================================
 " Taglist'S CUSTOMIZATIONS
 " =====================================
+if has("win32")
+	let Tlist_Ctags_Cmd = "\"".$HOME."\\vimfiles\\bin\\ctags\""
+endif
 let Tlist_Display_Prototype = 0
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
