@@ -37,7 +37,7 @@ And done.
 
 ## On Windows
 
-On Windows, follows these steps:
+On Windows, install git and GVim, then follows these steps:
 
 1. Clone this project somewhere in your computer:
 
