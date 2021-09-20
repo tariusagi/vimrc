@@ -2,6 +2,20 @@ set nocompatible
 "source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
+" ------------------------------------------------------------------------------
+" Predefined variables to be used later in this script.
+" ------------------------------------------------------------------------------
+" vimfiles: path of user-wise Vim directory. 
+if has("win32")
+	let vimfiles = $HOME."\\vimfiles"
+else
+	let vimfiles = $HOME."\\.vim"
+endif
+" Default wrap column.
+let wrap_col = 80
+
+
+
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -67,7 +81,7 @@ set visualbell
 set foldmethod=marker
 
 " Highlight comlumn 81.
-let &colorcolumn=join(range(81,81),",")
+let &colorcolumn=join(range(wrap_col + 1,wrap_col + 1),",")
 
 " Also perform all yank operation in the system clipboard.
 set clipboard=unnamed
@@ -94,7 +108,7 @@ set guioptions=erL
 " Taglist'S CUSTOMIZATIONS
 " =====================================
 if has("win32")
-	let Tlist_Ctags_Cmd = "\"".$HOME."\\vimfiles\\bin\\ctags\""
+	let Tlist_Ctags_Cmd = "\"".vimfiles."\\bin\\ctags\""
 endif
 let Tlist_Display_Prototype = 0
 let Tlist_File_Fold_Auto_Close = 1
@@ -153,7 +167,7 @@ function! UziAddFunctionHeader()
 	let l:func_name = expand("<cword>")
 	call append(line(".") - 1, '/* -----------------------------------------------------------------------------')
 	call append(line(".") - 1, 'NAME: '.l:func_name)
-	call append(line(".") - 1, 'AUTHOR: Phuong Vu (vuluuphuong@gmail.com)')
+	call append(line(".") - 1, 'AUTHOR: Phuong Vu (tariusagi@gmail.com)')
 	call append(line(".") - 1, 'INPUT: ')
 	call append(line(".") - 1, 'OUTPUT: ')
 	call append(line(".") - 1, 'DESCRIPTION:')
@@ -243,25 +257,19 @@ endfunction
 command! -nargs=* Sw call UziSubstWords(<f-args>)
 
 " Type "fs" in command mode to format current buffer using astyle.
-cnoremap fs exe '%!"'.$VIMRUNTIME.'\..\tools\astyle" --options="'.$USERPROFILE.'\astylerc"'<CR>:echo "Current buffer was formatted by Artistic Style."<CR>
-
+if has("win32")
+	let astyle = vimfiles."\\bin\\astyle.exe"
+else
+	let astyle = "astyle"
+endif
+cnoremap fs exe '%!"'.astyle.'" --options="'.vimfiles.'\astylerc"'<CR>:echo "INFO: current buffer has just been formatted with AStyle"<CR>
 
 " Type "<Leader>t" in insert mode to append current timestamp.
 inoremap <Leader>t <ESC>a<C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 
-" Type "gi" in normal mode to go to the function implementation under the cursor
-noremap gi yiw/\v^(\s*\w+\s*\**\s+)+<C-R>"\s*\(.*\)[\s\n]*\{<CR>:set nohlsearch<CR>
-
-" Type "ga" in normal mode to go to all assigments which applies to the
-" variable under the cursor.
-noremap ga yiw/<C-R>"\s*=\s*\w\+<CR>
-
 " Support Ctrl-C, Ctrl-V copy & paste in Visual and Select mode.
 vnoremap <C-C> "*y
 vnoremap <C-V> "*p
-
-" Type "<Leader>b" in normal mode to insert a bar.
-noremap <Leader>b o<Esc>80i-<Esc>o
 
 " Swap current word with registers("a-z)' content.
 noremap cw" "zdiwP
