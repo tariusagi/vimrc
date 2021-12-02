@@ -34,7 +34,7 @@ Follow these steps:
 
 `ln -fs ~/.vim/ctags ~/.ctags`
 
-4. Run Vim and execute this command in Vim `:helptags $VIMRUNTIME/doc` to generate tags for new plugins.
+4. Run Vim and execute this command in Vim `:helptags ~/.vim/doc` to generate tags for new plugins.
 
 And done.
 
@@ -58,7 +58,7 @@ On Windows, install git and GVim (GUI implementation of Vim, from Vim official s
 
 7. Move *ctags* file from *%USERPROFILE%\vimfiles* to *%USERPROFILE%* and rename it to *ctags.cnf*.
 
-8. Run GVim and execute this command in GVim `:helptags $VIMRUNTIME/doc` to generate tags for new plugins.
+8. Run GVim and execute this command in GVim `:helptags $USERPROFILE/vimfiles/doc` to generate tags for new plugins.
 
 And done.
 
