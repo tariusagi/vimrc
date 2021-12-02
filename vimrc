@@ -12,10 +12,7 @@ else
 	let vimfiles = $HOME."\\.vim"
 endif
 " Default wrap column.
-let wrap_col = 80
-
-
-
+let wrap_col = 120
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -68,8 +65,8 @@ set fileformats=unix,dos
 colorscheme desert
 hi StatusLine guibg=Black guifg=Yellow | hi StatusLineNC guibg=DarkGray guifg=Gray
 set guifont=consolas:h14
-set tabstop=4
-set sw=4
+set tabstop=2
+set sw=2
 set wrap
 set textwidth=0
 set nocursorline
@@ -80,7 +77,7 @@ set updatetime=500
 set visualbell
 set foldmethod=marker
 
-" Highlight comlumn 81.
+" Highlight wrap column.
 let &colorcolumn=join(range(wrap_col + 1,wrap_col + 1),",")
 
 " Also perform all yank operation in the system clipboard.
