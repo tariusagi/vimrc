@@ -26,17 +26,11 @@ This project requires:
 Follow these steps:
 
 1. Install git, vim, ctags, and astyle if they're not already installed.
-2. Clone this project into your home directory (~/):
+2. Clone this project.
 
-`git clone https://github.com/tariusagi/vimrc.git ~/.vim`
+`git clone https://github.com/tariusagi/vimrc.git`
 
-3. Link ctags configuration file:
-
-`ln -fs ~/.vim/ctags ~/.ctags`
-
-4. Run Vim and execute this command in Vim `:helptags ~/.vim/doc` to generate tags for new plugins.
-
-And done.
+3. Enter the project directory and run `./install.sh`.
 
 ## On Windows
 
