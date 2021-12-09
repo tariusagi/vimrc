@@ -41,6 +41,9 @@ endfunction
 
 let $LANG="en"
 
+" Disable Python plugin recommended style (for example keeps tab = 8 spaces).
+let g:python_recommended_style = 0
+
 " Enable syntax highlighting.
 syntax on
 
