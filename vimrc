@@ -11,8 +11,9 @@ if has("win32")
 else
 	let vimfiles = $HOME."\\.vim"
 endif
+
 " Default wrap column.
-let wrap_col = 120
+let wrap_col = 80
 
 set diffexpr=MyDiff()
 function MyDiff()
