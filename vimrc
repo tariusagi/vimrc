@@ -96,7 +96,7 @@ function MyTabLine()
 endfunction
 
 set guitablabel=%!MyTabLine()
-" set tabline=%!MyTabLine()
+set tabline=%!MyTabLine()
 
 " Status line: full path, modified, help tag, preview tag, line ending, file
 " type, ASCII/HEX value, position, percentage, total lines.
