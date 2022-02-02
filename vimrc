@@ -331,37 +331,11 @@ else
 endif
 cnoremap fs exe '%!"'.astyle.'" --options="'.vimfiles.'\astylerc"'<CR>:echo "INFO: current buffer has just been formatted with AStyle"<CR>
 
-" Type "<Leader>t" in insert mode to append current timestamp.
-inoremap <Leader>t <ESC>a<C-R>=strftime("%Y-%m-%d %H:%M")<CR>
+" Type <Leader>t in normal mode to toggle showing tabs.
+set listchars=tab:\|>
+noremap <Leader>t :set list!<CR>
 
 " Support Ctrl-C, Ctrl-V copy & paste in Visual and Select mode.
 vnoremap <C-C> "*y
 vnoremap <C-V> "*p
 
-" Swap current word with registers("a-z)' content.
-noremap cw" "zdiwP
-noremap cwa diw"aP
-noremap cwb diw"bP
-noremap cwc diw"cP
-noremap cwd diw"dP
-noremap cwe diw"eP
-noremap cwf diw"fP
-noremap cwg diw"gP
-noremap cwh diw"hP
-noremap cwi diw"iP
-noremap cwj diw"jP
-noremap cwk diw"kP
-noremap cwl diw"lP
-noremap cwm diw"mP
-noremap cwm diw"nP
-noremap cwo diw"oP
-noremap cwp diw"pP
-noremap cwq diw"qP
-noremap cws diw"sP
-noremap cwt diw"tP
-noremap cwu diw"uP
-noremap cwv diw"vP
-noremap cww diw"wP
-noremap cwx diw"xP
-noremap cwy diw"yP
-noremap cwz diw"zP
